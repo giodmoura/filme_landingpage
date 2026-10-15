@@ -1,90 +1,72 @@
-# 🎬 MovieCity — Landing Page
+# 🎬 MovieCity - Landing Page
 
-Landing page responsiva de um serviço de streaming fictício, construída com **React + Vite** e **CSS puro**. Projeto de prática de componentização, estruturação de pastas, carregamento de imagens e responsividade.
+[![React](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7.0-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![CSS3](https://img.shields.io/badge/CSS-Pure%20%2F%20Vanilla-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-8-646cff?logo=vite&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS-puro-1572b6?logo=css3&logoColor=white)
+Uma *landing page* responsiva e moderna de um serviço de streaming fictício, desenvolvida com **React 19** e **Vite 7**.
 
-## 📸 Preview
+Este projeto foi construído como um exercício prático focado em **componentização**, **estilização com CSS puro** (sem bibliotecas de UI de terceiros) e **design responsivo avançado** adaptável a múltiplos tamanhos de tela.
 
-| Desktop | Mobile | Mobile (menu aberto) |
-|---|---|---|
-| ![Desktop](docs/desktop.png) | ![Mobile](docs/mobile.png) | ![Menu](docs/mobile-menu.png) |
+---
 
-## 🎯 O que o projeto faz
+## 📌 Sumário
 
-- **Header:** logo "MovieCity", menu de navegação (Filmes, Categoria, Sobre, Contato) e botão **Login**.
-- **Main:** coluna com o texto de chamada ("Seus Filmes") + botão **Mais**, e coluna com um grid de 6 cards de filmes (Afterlife, Transformers, Mowgli, Shift, Round 6 e Harry Potter).
-- **Mobile:** as colunas se empilham, o grid passa para 2 colunas e o menu vira um **hambúrguer** que abre e fecha.
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Pré-requisitos](#-pré-requisitos)
+- [Como Executar o Projeto](#-como-executar-o-projeto)
+- [Estrutura de Pastas](#-estrutura-de-pastas)
+- [Arquitetura e Fluxo de Dados](#-arquitetura-e-fluxo-de-dados)
+- [Responsividade](#-responsividade)
+- [Scripts Disponíveis](#-scripts-disponíveis)
+- [Próximos Passos](#-próximos-passos)
 
-## 🧰 Tecnologias
+---
 
-React 19 · Vite · JavaScript (ESM) · CSS puro (media queries, Flexbox e Grid) · oxlint
+## 📖 Sobre o Projeto
 
-## ✅ Pré-requisitos
+A *landing page* da MovieCity é dividida em duas áreas principais:
 
-- Node.js 20.19+ ou 22.12+
-- npm
+1. **Header (Cabeçalho):**
+   - Logótipo da marca (`MovieCity`).
+   - Menu de navegação dinâmico (*Filmes*, *Categoria*, *Sobre*, *Contato*).
+   - Botão de acesso rápido (*Login*).
+   - Menu hambúrguer interativo para dispositivos móveis.
 
-## ▶️ Como executar
+2. **Main (Conteúdo Principal):**
+   - **Coluna de Chamada:** Título impactante, descrição sumária e botão de ação (*Mais*).
+   - **Coluna de Conteúdo (Grid):** Exibição em grelha de 6 cartões de filmes (*Afterlife*, *Transformers*, *Mowgli*, *Shift*, *Round 6* e *Harry Potter*).
 
+### 📱 Comportamento Responsivo
+- Em ecrãs de menor dimensão, o layout adapta-se de forma inteligente: as colunas do topo empilham-se, a grelha de cartões ajusta-se dinamicamente para 2 colunas e o menu de navegação é recolhido num **menu hambúrguer interativo**.
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+Nenhuma biblioteca de UI externa (como Tailwind, Bootstrap ou Styled Components) foi utilizada, com o objetivo de praticar CSS puro de raiz.
+
+| Tecnologia | Finalidade |
+| :--- | :--- |
+| **React 19** | Biblioteca principal para construção da interface baseada em componentes. |
+| **Vite 7** | *Bundler* de produção e servidor de desenvolvimento ultra-rápido com HMR. |
+| **JavaScript (ESM)** | Linguagem base do projeto e gestão de módulos nativos. |
+| **CSS3 Puro** | Estilização global, layout Flexbox/Grid e *media queries* para responsividade. |
+| **ESLint** | Ferramenta para análise estática e padronização da qualidade do código. |
+
+---
+
+## 📋 Pré-requisitos
+
+Antes de iniciar, certifique-se de que tem instaladas as seguintes ferramentas na sua máquina:
+
+- **Node.js**: Versão `20.19+` ou `22.12+` *(exigido pelo Vite 7)*
+- **npm** (incluído com o Node.js), **yarn** ou **pnpm**
+- Editor de código (ex: [VS Code](https://code.visualstudio.com/))
+
+Para verificar as versões instaladas, execute:
 ```bash
-npm install
-npm run dev
-```
-
-Abra http://localhost:5173.
-
-| Comando | Descrição |
-|---|---|
-| `npm run dev` | Servidor de desenvolvimento com HMR |
-| `npm run build` | Build de produção em `dist/` |
-| `npm run preview` | Pré-visualiza o build |
-| `npm run lint` | Análise estática do código |
-
-## 📁 Estrutura de pastas
-
-```
-01_landinpage/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── assets/            # imagens dos pôsteres
-│   ├── components/
-│   │   ├── Header.jsx     # cabeçalho + menu hambúrguer
-│   │   ├── Main.jsx       # texto de chamada + grid de filmes
-│   │   └── Home.jsx       # container da página
-│   ├── App.jsx            # renderiza <Home />
-│   ├── index.css          # estilos globais + responsividade
-│   └── main.jsx           # ponto de entrada do React
-├── index.html
-├── package.json
-└── vite.config.js
-```
-
-Fluxo: `index.html → main.jsx → App.jsx → Home.jsx → Header.jsx + Main.jsx`
-
-## 📱 Responsividade
-
-| Breakpoint | Alvo | O que muda |
-|---|---|---|
-| `max-width: 1100px` | Tablets em paisagem | Espaçamentos e tipografia menores |
-| `max-width: 900px` | Tablets retrato / celulares grandes | Colunas empilham, texto centralizado, menu hambúrguer |
-| `max-width: 600px` | Celulares | Grid de cards com 2 colunas |
-| `max-width: 380px` | Celulares pequenos | Ajustes finos de fonte e proporção dos cards |
-
-Testado em 1568, 1024, 768, 600 e 375px, sem barra de rolagem horizontal.
-
-## 🧪 Testes realizados
-
-- [x] `npm run dev` / `npm run build` executam sem erros
-- [x] Visual conferido contra o print do resultado esperado
-- [x] Responsividade nas larguras acima
-- [x] Menu hambúrguer abre/fecha e fecha ao clicar em um link
-
-## 💡 Próximos passos
-
-- Transformar os cards em botões acessíveis
-- Adicionar título e nota por filme
-- Buscar filmes de uma API (ex.: TMDB) e renderizar com `.map()`
+node -v
+npm -v
